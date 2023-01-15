@@ -16,9 +16,9 @@ variable "expiration_date" {
 
 locals {
   common_tags = {
-    Owner = var.owner
-    bootcamp = var.bootcamp
+    Owner           = var.owner
+    bootcamp        = var.bootcamp
     expiration_date = var.expiration_date
-    created_by = "terraform"
+    created_by      = "terraform"
   }
 }
