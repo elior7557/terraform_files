@@ -10,12 +10,6 @@ resource "aws_instance" "easyway1" {
   vpc_security_group_ids      = [aws_security_group.httpSSH.id]
   subnet_id                   = aws_subnet.subnet1.id
   associate_public_ip_address = true
-  depends_on = [
-    aws_vpc.easyway-elior,
-    aws_subnet.subnet1,
-    aws_security_group.httpSSH,
-    aws_internet_gateway.gw-easyway-elior
-  ]
 
   tags = merge(local.common_tags, {
     Name = "easyWay1-Elior"
@@ -28,13 +22,6 @@ resource "aws_instance" "easyway2" {
   vpc_security_group_ids      = [aws_security_group.httpSSH.id]
   subnet_id                   = aws_subnet.subnet2.id
   associate_public_ip_address = true
-  depends_on = [
-    aws_vpc.easyway-elior,
-    aws_subnet.subnet1,
-    aws_security_group.httpSSH,
-    aws_internet_gateway.gw-easyway-elior
-  ]
-
   tags = merge(local.common_tags, {
     Name = "easyWay2-Elior"
   })

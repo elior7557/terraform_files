@@ -45,13 +45,6 @@ resource "aws_lb" "mylb" {
 
   enable_deletion_protection = false
   tags                       = local.common_tags
-
-  depends_on = [
-    aws_vpc.easyway-elior,
-    aws_subnet.subnet1,
-    aws_instance.easyway1,
-    aws_instance.easyway2
-  ]
 }
 
 

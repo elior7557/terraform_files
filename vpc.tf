@@ -30,9 +30,9 @@ resource "aws_subnet" "subnet2" {
 resource "aws_internet_gateway" "gw-easyway-elior" {
   vpc_id = aws_vpc.easyway-elior.id
   tags   = local.common_tags
-  depends_on = [
-    aws_vpc.easyway-elior
-  ]
+  # depends_on = [
+  #   aws_vpc.easyway-elior
+  # ]
 }
 
 resource "aws_route_table" "mainrt-easyway-elior" {
@@ -44,10 +44,10 @@ resource "aws_route_table" "mainrt-easyway-elior" {
   }
 
 
-  depends_on = [
-    aws_vpc.easyway-elior,
-    aws_internet_gateway.gw-easyway-elior
-  ]
+  # depends_on = [
+  #   aws_vpc.easyway-elior,
+  #   aws_internet_gateway.gw-easyway-elior
+  # ]
 
   tags = local.common_tags
 
