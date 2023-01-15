@@ -10,12 +10,6 @@ variable "aws_provider_version" {
   default = "4.49.0"
 }
 
-// Backend
-# variable "state_path" {
-#   default = "dynamic-way"
-# }
-
-
 
 // Common Tags
 variable "owner" {
@@ -63,6 +57,11 @@ variable "first_ec2_name" {
 variable "second_ec2_name" {
   type    = string
   default = "easyWay2-Elior"
+}
+
+variable "associate_public_ip_address" {
+  type        = bool
+  default     = true
 }
 
 # Network vars
