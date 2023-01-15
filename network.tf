@@ -2,29 +2,29 @@
 # Neworking VPC And Subnets
 
 resource "aws_vpc" "easyway-elior" {
-  cidr_block = "10.0.0.0/16"
+  cidr_block = var.vpc_cidr
   tags = merge(local.common_tags, {
-    Name = "${var.vpc_name}"
+    Name = var.vpc_name
   })
 
 }
 
 resource "aws_subnet" "subnet1" {
   vpc_id            = aws_vpc.easyway-elior.id
-  cidr_block        = "10.0.1.0/24"
-  availability_zone = "eu-west-3a"
+  cidr_block        = var.subnet_one_cidr
+  availability_zone = var.subnet_one_az
   tags = merge(local.common_tags, {
-    Name = "${var.subnet_one}"
+    Name = var.subnet_one
   })
 
 }
 
 resource "aws_subnet" "subnet2" {
   vpc_id            = aws_vpc.easyway-elior.id
-  cidr_block        = "10.0.2.0/24"
-  availability_zone = "eu-west-3b"
+  cidr_block        = var.subnet_two_cidr
+  availability_zone = var.subnet_two_az
   tags = merge(local.common_tags, {
-    Name = "${var.subnet_two}"
+    Name = var.subnet_two
   })
 
 }
@@ -59,14 +59,4 @@ resource "aws_route_table_association" "b" {
 }
 
 
-variable "vpc_name" {
-  default = "easyName_vpc_elior"
-}
 
-variable "subnet_one" {
-  default = "public_sb1_easyway_elior"
-}
-
-variable "subnet_two" {
-  default = "public_sb2_easyway_elior"
-}

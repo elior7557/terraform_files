@@ -1,19 +1,19 @@
 // Seurity Groups
 resource "aws_security_group" "httpSSH" {
-  name        = "eliorSG"
-  description = "Allow SSH and HTTP traffic"
+  name        = var.security_group_name
+  description = var.security_group_description
   vpc_id      = aws_vpc.easyway-elior.id
 
   ingress {
-    from_port   = 22
-    to_port     = 22
+    from_port   = var.ssh_port
+    to_port     = var.ssh_port
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
   ingress {
-    from_port   = 80
-    to_port     = 80
+    from_port   = var.http_port
+    to_port     = var.http_port
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
