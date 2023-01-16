@@ -4,4 +4,3 @@
 terraform.tfstate
 terraform.tfstate.backup
 module_lesson
-do_it_right_TF_modules
