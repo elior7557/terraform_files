@@ -11,11 +11,14 @@ variable "aws_provider_version" {
 }
 
 variable "provision_second_subnet" {
-  type = bool
+  type    = bool
+  default = true
+
 }
 
 variable "provision_second_ec2" {
-  type = bool
+  type    = bool
+  default = true
 }
 
 

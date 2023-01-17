@@ -16,9 +16,6 @@ variable "subnet_az" {
   description = "A list with all subnet AZ"
 }
 
-
-
-
 variable "common_tags" {
   type = map(any)
 }

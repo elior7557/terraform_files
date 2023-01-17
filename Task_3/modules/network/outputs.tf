@@ -1,3 +1,4 @@
+
 # Output varaible defenitions
 
 # VPC ID
@@ -11,4 +12,3 @@ output "subnet_ids" {
   description = "ID of subnets"
   value       = tolist(aws_subnet.public-subnets[*].id)
 }
-

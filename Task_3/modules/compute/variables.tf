@@ -23,7 +23,6 @@ variable "vpc_id" {
 }
 
 
-
 ### Optinal ###
 // Instances vars
 variable "ec2_ami" {
